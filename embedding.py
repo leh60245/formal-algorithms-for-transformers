@@ -15,13 +15,13 @@ class TokenEmbedding(nn.Module):
 
 
 if __name__ == "__main__":
-    emb_size = 50  # 벡터 표현 / 토큰 임베딩
+    emb_size = 512  # 벡터 표현 / 토큰 임베딩
     vocab_size = 10000  # 사전의 크기
     token_emb = TokenEmbedding(emb_size=emb_size, vocab_size=vocab_size)
 
     vocab_size = 100
+    seq_len = 128  # 입력되는 문장의 길이
     batch_size = 32
-    seq_len = 128
     idx = torch.randint(0, vocab_size, size=(batch_size, seq_len))
     print("idx size:", idx.shape)
 
